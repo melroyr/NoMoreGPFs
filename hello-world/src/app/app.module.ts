@@ -7,8 +7,10 @@ import { HelloCityComponent } from './hello-city/hello-city.component';
 import { HelloLocalComponent } from './hello-local/hello-local.component';
 import { HelloNationComponent } from './hello-nation/hello-nation.component';
 import { HelloInternationComponent } from './hello-internation/hello-internation.component';
-import { AppHeaderComponent } from './app-header/app-header.component';
-import { AppFooterComponent } from './app-footer/app-footer.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { MenuComponent } from './menu/menu.component';
+import { HelloStateComponent } from './hello-state/hello-state.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +19,10 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
     HelloLocalComponent,
     HelloNationComponent,
     HelloInternationComponent,
-    AppHeaderComponent,
-    AppFooterComponent
+    HeaderComponent,
+    FooterComponent,
+    MenuComponent,
+    HelloStateComponent
   ],
   imports: [
     BrowserModule,
