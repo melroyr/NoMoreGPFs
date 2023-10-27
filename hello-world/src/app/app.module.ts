@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { HelloCityComponent } from './hello-city/hello-city.component';
 import { HelloLocalComponent } from './hello-local/hello-local.component';
 import { HelloNationComponent } from './hello-nation/hello-nation.component';
@@ -26,7 +27,8 @@ import { HelloStateComponent } from './hello-state/hello-state.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

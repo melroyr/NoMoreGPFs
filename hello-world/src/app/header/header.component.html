@@ -1,1 +1,16 @@
 <p>header works!</p>
+<div class="col-md-6">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Remote Greeting</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let remoteGreeting of remoteGreetings">
+      <td>{{remoteGreeting.generalGreeting}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

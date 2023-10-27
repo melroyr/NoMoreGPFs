@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RemoteGreetingService, RemoteGreeting } from '../services/remotegreeting.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  remoteGreetings: RemoteGreeting[];
 
-  ngOnInit(): void {
+  constructor( private remoteGreetingService: RemoteGreetingService) { }
+
+  ngOnInit() {
+
+    this.remoteGreetingService.getRemoteGreeting().subscribe(
+         response =>{this.remoteGreetings = response;}
+        );
+
   }
 
 }
