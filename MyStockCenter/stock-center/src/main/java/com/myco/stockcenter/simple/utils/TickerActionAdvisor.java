@@ -1,26 +1,35 @@
 package com.myco.stockcenter.simple.utils;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import org.springframework.core.io.ClassRelativeResourceLoader;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 
+import jakarta.annotation.PostConstruct;
 import lombok.Data;
 
 @Data
-public class Json2Java {
+@Component
+public class TickerActionAdvisor {
 	
+	//private String tickerSymbol;
 	private static String data;
-	private float initialMSFTStockPrice;
+	private float initialStockPrice;
 	private StockQuote stockQuote;
 	
-	private void getData() throws IOException {
+	private void getData(String tickerSymbol) throws IOException {
 		StockInfo stockInfo = new StockInfo();
-		data = stockInfo.getTimeSeriesDaily();
+		data = stockInfo.getTimeSeriesDaily(tickerSymbol);
 		if(!data.isEmpty()) {
 			ObjectReader or = new ObjectMapper().reader();
 			stockQuote = or.readValue(data, StockQuote.class);
@@ -28,12 +37,12 @@ public class Json2Java {
 		}
 	}
 	
-	private void setInintialPrice() throws IOException {
+	private void setInintialPrice(String tickerSymbol) throws IOException {
 		//String data = "{    \"globalQuote\": {        \"symbol\": \"MSFT\",        \"open\": \"373.6800\",        \"high\": \"375.1800\",        \"low\": \"372.7100\",        \"price\": \"374.5800\",        \"volume\": \"17107484\",        \"latesttradingday\": \"2023-12-22\",        \"previousclose\": \"373.5400\",        \"change\": \"1.0400\",        \"changepercent\": \"0.2784\"    }}        \"previousclose\": \"373.5400\",        \"change\": \"1.0400\",        \"changepercent\": \"0.2784\"    }}";
-		initialMSFTStockPrice = stockQuote.getGlobalQuote().getPrice();
+		initialStockPrice = stockQuote.getGlobalQuote().getPrice();
 	}
 	
-	private void check() throws IOException {
+	private void check(String tickerSymbol) throws IOException {
 		Date date = new Date();
 		long time = date.getTime();
 		System.out.println("Initial Time: " + time);
@@ -53,20 +62,24 @@ public class Json2Java {
 				for(int i=0; i<12; i++) {
 					System.out.println("i: " + i);
 					try {
-						getData();
-						float currentMSFTStockPrice = stockQuote.getGlobalQuote().getPrice();
-						if(currentMSFTStockPrice > initialMSFTStockPrice) {
-							System.out.println("Sell" + i);
-						} else if (currentMSFTStockPrice < initialMSFTStockPrice) {
-							System.out.println("Buy" + i);
-						} else {
-							System.out.println("Hold " + i);
-						}
-						try {
-							Thread.sleep(30000);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
+						
+						while (tickerSymbol != null) {
+							System.out.println("Ticker Symbol: " + tickerSymbol);
+							getData(tickerSymbol);
+							float currentMSFTStockPrice = stockQuote.getGlobalQuote().getPrice();
+							if(currentMSFTStockPrice > initialStockPrice) {
+								System.out.println("Sell" + i);
+							} else if (currentMSFTStockPrice < initialStockPrice) {
+								System.out.println("Buy" + i);
+							} else {
+								System.out.println("Hold " + i);
+							}
+							try {
+								Thread.sleep(30000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 						}
 					} catch (Throwable t) {
 						t.printStackTrace();
@@ -86,21 +99,28 @@ public class Json2Java {
 		System.out.println("Done for the day. Good luck again tomorrow");
 	}
 	
-	public static void main(String[] args) {
+	@PostConstruct
+	public void launch() {
 		
-		Json2Java json2Java = new Json2Java();
+		TickerActionAdvisor json2Java = new TickerActionAdvisor();
 		try {
-			json2Java.getData();
-			if(!data.isEmpty()) {
-				json2Java.setInintialPrice();
-				json2Java.check();
+			ResourceLoader rl = new ClassRelativeResourceLoader(TickerActionAdvisor.class);
+			Resource resource = rl.getResource("classpath:InterestedTickerSymbols.txt");
+			File file = resource.getFile();
+			BufferedReader bufferedReader = new BufferedReader(new FileReader(file.getAbsolutePath()));
+			String tickerSymbol = bufferedReader.readLine();
+			
+			while(tickerSymbol != null) {
+				json2Java.getData(tickerSymbol);
+				if(!data.isEmpty()) {
+					json2Java.setInintialPrice(tickerSymbol);
+					json2Java.check(tickerSymbol);
+				}
+				tickerSymbol = bufferedReader.readLine();
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-		
+		}	
 	}
-
 }

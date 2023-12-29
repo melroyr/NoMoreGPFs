@@ -14,12 +14,13 @@ public class StockInfo {
 	
 	private RestTemplate restTemplate = new RestTemplate();
 	
-	public String getTimeSeriesDaily(){
+	public String getTimeSeriesDaily(String tickerSymbol){
         HttpHeaders headers=new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         HttpEntity<String> entity=new HttpEntity<String>(headers);
         String data = restTemplate.exchange(
-        		"https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=MSFT&apikey=J62210IMY0HDA5P9",
+        		"https://www.alphavantage.co/query?function=GLOBAL_QUOTE&"
+        		+ "symbol="+tickerSymbol+"&apikey=J62210IMY0HDA5P9",
         		HttpMethod.GET,entity,String.class).getBody();
         //System.out.println("Data: " + data);
         StringBuffer dataBuffer = new StringBuffer();
@@ -69,10 +70,10 @@ public class StockInfo {
 		return processLine(replacedString);
 	}
 	
-	public static void main(String[]args) {
-		StockInfo stockInfo = new StockInfo();
-		stockInfo.getTimeSeriesDaily();
-	}
+//	public static void main(String[]args) {
+//		StockInfo stockInfo = new StockInfo();
+//		stockInfo.getTimeSeriesDaily();
+//	}
 	
 	//https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo
 	//https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=my_api_key

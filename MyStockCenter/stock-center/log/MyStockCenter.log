@@ -57,3 +57,10 @@ java.lang.NullPointerException: Cannot invoke "java.util.HashMap.put(Object, Obj
 2023-12-27T08:02:26.337-05:00  INFO 10988 --- [main] c.m.s.simple.SampleSimpleApplication     : Started SampleSimpleApplication in 3.678 seconds (process running for 4.337)
 2023-12-27T08:03:00.012-05:00  INFO 10988 --- [ThreadPoolTaskScheduler1] c.m.s.simple.executor.ScheduledTasks     : The time is now 08:03:00
 2023-12-27T08:04:00.002-05:00  INFO 10988 --- [ThreadPoolTaskScheduler1] c.m.s.simple.executor.ScheduledTasks     : The time is now 08:04:00
+2023-12-29T12:47:47.387-05:00  INFO 48831 --- [main] c.m.s.simple.SampleSimpleApplication     : Starting SampleSimpleApplication using Java 17.0.9 with PID 48831 (/home/melroyr/Projects/NoMoreGPFs/MyStockCenter/stock-center/target/classes started by melroyr in /home/melroyr/Projects/NoMoreGPFs/MyStockCenter/stock-center)
+2023-12-29T12:47:47.405-05:00  INFO 48831 --- [main] c.m.s.simple.SampleSimpleApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-12-29T12:47:50.356-05:00  INFO 48831 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-29T12:47:50.387-05:00  INFO 48831 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-29T12:47:50.392-05:00  INFO 48831 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-12-29T12:47:50.688-05:00  INFO 48831 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-29T12:47:50.695-05:00  INFO 48831 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2991 ms
