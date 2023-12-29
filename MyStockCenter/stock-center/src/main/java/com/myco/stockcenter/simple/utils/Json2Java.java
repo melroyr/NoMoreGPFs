@@ -2,6 +2,9 @@ package com.myco.stockcenter.simple.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
@@ -31,23 +34,56 @@ public class Json2Java {
 	}
 	
 	private void check() throws IOException {
-		for(int i=0; i<10; i++) {
-			getData();
-			float currentMSFTStockPrice = stockQuote.getGlobalQuote().getPrice();
-			if(currentMSFTStockPrice > initialMSFTStockPrice) {
-				System.out.println("Sell");
-			} else if (currentMSFTStockPrice < initialMSFTStockPrice) {
-				System.out.println("Buy");
+		Date date = new Date();
+		long time = date.getTime();
+		System.out.println("Initial Time: " + time);
+		
+		Calendar calOpen = Calendar.getInstance();
+		calOpen.set(Calendar.HOUR_OF_DAY,9);
+		calOpen.set(Calendar.MINUTE,30);
+		calOpen.set(Calendar.SECOND,0);
+		calOpen.set(Calendar.MILLISECOND,0);
+
+		long stockOpen = calOpen.getTime().getTime();
+		System.out.println("Stock Open:" + stockOpen);
+		
+		for(int j=0; j<18; j++) {
+			System.out.println("j: " + j);
+			if(time > stockOpen) {
+				for(int i=0; i<12; i++) {
+					System.out.println("i: " + i);
+					try {
+						getData();
+						float currentMSFTStockPrice = stockQuote.getGlobalQuote().getPrice();
+						if(currentMSFTStockPrice > initialMSFTStockPrice) {
+							System.out.println("Sell" + i);
+						} else if (currentMSFTStockPrice < initialMSFTStockPrice) {
+							System.out.println("Buy" + i);
+						} else {
+							System.out.println("Hold " + i);
+						}
+						try {
+							Thread.sleep(30000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					} catch (Throwable t) {
+						t.printStackTrace();
+					}
+				}
 			} else {
-				System.out.println("Hold");
-			}
-			try {
-				Thread.sleep(15000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				time = new Date().getTime();
+				System.out.println("Updated time: " + time);
+				try {
+					Thread.sleep(60000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
 			}
 		}
+		System.out.println("Done for the day. Good luck again tomorrow");
 	}
 	
 	public static void main(String[] args) {

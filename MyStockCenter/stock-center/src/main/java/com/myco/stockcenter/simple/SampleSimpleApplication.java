@@ -22,12 +22,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.myco.stockcenter.simple.service.HelloWorldService;
 
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
+@EnableScheduling
 public class SampleSimpleApplication implements CommandLineRunner {
 
 	// Simple example shows how a command line spring application can execute an

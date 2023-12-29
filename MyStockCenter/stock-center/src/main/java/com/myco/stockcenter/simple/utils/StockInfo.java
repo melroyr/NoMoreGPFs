@@ -28,7 +28,7 @@ public class StockInfo {
 	        
 	        while (scanner.hasNextLine()) {
 	          String line = scanner.nextLine();
-	          System.out.println("line: " + line);
+	          //System.out.println("line: " + line);
 	          if(line.contains("Global")) {
 	        	  dataBuffer.append(processLine(line));
 	          } else if (line.contains(".")) {
