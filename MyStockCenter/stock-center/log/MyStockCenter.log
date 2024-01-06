@@ -1,14 +1,42 @@
-2023-12-30T13:33:17.671-05:00  INFO 11798 --- [main] c.m.s.simple.SampleSimpleApplication     : Starting SampleSimpleApplication using Java 17.0.9 with PID 11798 (/home/melroyr/JavaProjects/NoMoreGPFs/MyStockCenter/stock-center/target/classes started by melroyr in /home/melroyr/JavaProjects/NoMoreGPFs/MyStockCenter/stock-center)
-2023-12-30T13:33:17.701-05:00  INFO 11798 --- [main] c.m.s.simple.SampleSimpleApplication     : No active profile set, falling back to 1 default profile: "default"
-2023-12-30T13:33:21.694-05:00  INFO 11798 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-12-30T13:33:21.729-05:00  INFO 11798 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-12-30T13:33:21.734-05:00  INFO 11798 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2023-12-30T13:33:22.240-05:00  INFO 11798 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-12-30T13:33:22.241-05:00  INFO 11798 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4303 ms
-2023-12-30T13:34:50.101-05:00  INFO 11878 --- [main] c.m.s.simple.SampleSimpleApplication     : Starting SampleSimpleApplication using Java 17.0.9 with PID 11878 (/home/melroyr/JavaProjects/NoMoreGPFs/MyStockCenter/stock-center/target/classes started by melroyr in /home/melroyr/JavaProjects/NoMoreGPFs/MyStockCenter/stock-center)
-2023-12-30T13:34:50.113-05:00  INFO 11878 --- [main] c.m.s.simple.SampleSimpleApplication     : No active profile set, falling back to 1 default profile: "default"
-2023-12-30T13:34:52.816-05:00  INFO 11878 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-12-30T13:34:52.850-05:00  INFO 11878 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-12-30T13:34:52.853-05:00  INFO 11878 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2023-12-30T13:34:53.335-05:00  INFO 11878 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-12-30T13:34:53.336-05:00  INFO 11878 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3005 ms
+2024-01-06T06:24:06.303-05:00  INFO 12228 --- [main] c.m.s.simple.SampleSimpleApplication     : Starting SampleSimpleApplication using Java 17.0.9 with PID 12228 (C:\Projects\NoMoreGPFs\MyStockCenter\stock-center\target\classes started by melro in C:\Projects\NoMoreGPFs\MyStockCenter\stock-center)
+2024-01-06T06:24:06.337-05:00  INFO 12228 --- [main] c.m.s.simple.SampleSimpleApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-01-06T06:24:12.239-05:00  INFO 12228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-01-06T06:24:12.284-05:00  INFO 12228 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-06T06:24:12.291-05:00  INFO 12228 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-01-06T06:24:12.751-05:00  INFO 12228 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-06T06:24:12.756-05:00  INFO 12228 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5719 ms
+2024-01-06T06:24:13.946-05:00  INFO 12228 --- [main] .s.s.s.TickerActionAdvicorInvokerService : Post Successful
+2024-01-06T06:25:50.218-05:00  INFO 15676 --- [main] c.m.s.simple.SampleSimpleApplication     : Starting SampleSimpleApplication using Java 17.0.9 with PID 15676 (C:\Projects\NoMoreGPFs\MyStockCenter\stock-center\target\classes started by melro in C:\Projects\NoMoreGPFs\MyStockCenter\stock-center)
+2024-01-06T06:25:50.232-05:00  INFO 15676 --- [main] c.m.s.simple.SampleSimpleApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-01-06T06:25:54.355-05:00  INFO 15676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-01-06T06:25:54.381-05:00  INFO 15676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-06T06:25:54.382-05:00  INFO 15676 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-01-06T06:25:55.223-05:00  INFO 15676 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-06T06:25:55.229-05:00  INFO 15676 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4593 ms
+2024-01-06T06:25:56.417-05:00  INFO 15676 --- [main] .s.s.s.TickerActionAdvicorInvokerService : Post Successful
+2024-01-06T06:27:49.616-05:00  INFO 2400 --- [main] c.m.s.simple.SampleSimpleApplication     : Starting SampleSimpleApplication using Java 17.0.9 with PID 2400 (C:\Projects\NoMoreGPFs\MyStockCenter\stock-center\target\classes started by melro in C:\Projects\NoMoreGPFs\MyStockCenter\stock-center)
+2024-01-06T06:27:49.629-05:00  INFO 2400 --- [main] c.m.s.simple.SampleSimpleApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-01-06T06:27:54.964-05:00  INFO 2400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-01-06T06:27:55.012-05:00  INFO 2400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-06T06:27:55.013-05:00  INFO 2400 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-01-06T06:27:55.529-05:00  INFO 2400 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-06T06:27:55.540-05:00  INFO 2400 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5053 ms
+2024-01-06T06:27:56.191-05:00  INFO 2400 --- [main] .s.s.s.TickerActionAdvicorInvokerService : Post Successful
+2024-01-06T06:43:15.841-05:00  INFO 15348 --- [main] c.m.s.simple.SampleSimpleApplication     : Starting SampleSimpleApplication using Java 17.0.9 with PID 15348 (C:\Projects\NoMoreGPFs\MyStockCenter\stock-center\target\classes started by melro in C:\Projects\NoMoreGPFs\MyStockCenter\stock-center)
+2024-01-06T06:43:15.864-05:00  INFO 15348 --- [main] c.m.s.simple.SampleSimpleApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-01-06T06:43:19.858-05:00  INFO 15348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-01-06T06:43:19.896-05:00  INFO 15348 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-06T06:43:19.901-05:00  INFO 15348 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-01-06T06:43:20.246-05:00  INFO 15348 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-06T06:43:20.252-05:00  INFO 15348 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4153 ms
+2024-01-06T06:43:20.798-05:00  INFO 15348 --- [main] .s.s.s.TickerActionAdvicorInvokerService : Async Successful
+2024-01-06T06:43:20.802-05:00  INFO 15348 --- [main] .s.s.s.TickerActionAdvicorInvokerService : Async Successful
+2024-01-06T06:43:51.595-05:00  INFO 19116 --- [main] c.m.s.simple.SampleSimpleApplication     : Starting SampleSimpleApplication using Java 17.0.9 with PID 19116 (C:\Projects\NoMoreGPFs\MyStockCenter\stock-center\target\classes started by melro in C:\Projects\NoMoreGPFs\MyStockCenter\stock-center)
+2024-01-06T06:43:51.607-05:00  INFO 19116 --- [main] c.m.s.simple.SampleSimpleApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-01-06T06:43:56.281-05:00  INFO 19116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-01-06T06:43:56.306-05:00  INFO 19116 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-06T06:43:56.307-05:00  INFO 19116 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-01-06T06:43:56.917-05:00  INFO 19116 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-06T06:43:56.919-05:00  INFO 19116 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5047 ms
+2024-01-06T06:43:57.415-05:00  INFO 19116 --- [main] .s.s.s.TickerActionAdvicorInvokerService : Async Successful
+2024-01-06T06:43:57.417-05:00  INFO 19116 --- [main] .s.s.s.TickerActionAdvicorInvokerService : Async Successful

@@ -1,0 +1,11 @@
+2024-01-04T15:43:44.840-05:00  INFO 14440 --- [main] c.m.s.simple.SampleSimpleApplication     : Starting SampleSimpleApplication v0.0.1-SNAPSHOT using Java 21.0.1 with PID 14440 (C:\Projects\NoMoreGPFs\MyStockCenter\stock-center-worker\target\stock-center-worker-0.0.1-SNAPSHOT.jar started by melro in C:\Projects\NoMoreGPFs\MyStockCenter\stock-center-worker)
+2024-01-04T15:43:45.076-05:00  INFO 14440 --- [main] c.m.s.simple.SampleSimpleApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-01-04T15:43:54.185-05:00  INFO 14440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2024-01-04T15:43:54.233-05:00  INFO 14440 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-04T15:43:54.234-05:00  INFO 14440 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-01-04T15:43:54.555-05:00  INFO 14440 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-04T15:43:54.556-05:00  INFO 14440 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8682 ms
+2024-01-04T15:43:57.286-05:00  INFO 14440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2024-01-04T15:43:57.384-05:00  INFO 14440 --- [main] c.m.s.simple.SampleSimpleApplication     : Started SampleSimpleApplication in 19.424 seconds (process running for 26.863)
+2024-01-04T15:45:29.266-05:00  INFO 14440 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-04T15:45:30.034-05:00  INFO 14440 --- [http-nio-8888-exec-1] c.m.s.s.c.StockCenterWorkerController    : Log Ticker: APPL

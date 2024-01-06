@@ -1,0 +1,14 @@
+2023-12-30T13:33:17.671-05:00  INFO 11798 --- [main] c.m.s.simple.SampleSimpleApplication     : Starting SampleSimpleApplication using Java 17.0.9 with PID 11798 (/home/melroyr/JavaProjects/NoMoreGPFs/MyStockCenter/stock-center/target/classes started by melroyr in /home/melroyr/JavaProjects/NoMoreGPFs/MyStockCenter/stock-center)
+2023-12-30T13:33:17.701-05:00  INFO 11798 --- [main] c.m.s.simple.SampleSimpleApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-12-30T13:33:21.694-05:00  INFO 11798 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-30T13:33:21.729-05:00  INFO 11798 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-30T13:33:21.734-05:00  INFO 11798 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-12-30T13:33:22.240-05:00  INFO 11798 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-30T13:33:22.241-05:00  INFO 11798 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4303 ms
+2023-12-30T13:34:50.101-05:00  INFO 11878 --- [main] c.m.s.simple.SampleSimpleApplication     : Starting SampleSimpleApplication using Java 17.0.9 with PID 11878 (/home/melroyr/JavaProjects/NoMoreGPFs/MyStockCenter/stock-center/target/classes started by melroyr in /home/melroyr/JavaProjects/NoMoreGPFs/MyStockCenter/stock-center)
+2023-12-30T13:34:50.113-05:00  INFO 11878 --- [main] c.m.s.simple.SampleSimpleApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-12-30T13:34:52.816-05:00  INFO 11878 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-30T13:34:52.850-05:00  INFO 11878 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-30T13:34:52.853-05:00  INFO 11878 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-12-30T13:34:53.335-05:00  INFO 11878 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-30T13:34:53.336-05:00  INFO 11878 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3005 ms

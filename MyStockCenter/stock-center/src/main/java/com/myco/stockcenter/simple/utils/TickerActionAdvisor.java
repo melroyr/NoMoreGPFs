@@ -1,9 +1,15 @@
 package com.myco.stockcenter.simple.utils;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.springframework.core.io.ClassRelativeResourceLoader;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,7 +19,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.Data;
 
 @Data
-//@Component
+@Component
 public class TickerActionAdvisor {
 	
 	//private String tickerSymbol;
@@ -39,7 +45,7 @@ public class TickerActionAdvisor {
 	private void check(String tickerSymbol) throws IOException {
 		Date date = new Date();
 		long time = date.getTime();
-		//System.out.println("Initial Time: " + time);
+		System.out.println("Initial Time: " + time);
 		
 		Calendar calOpen = Calendar.getInstance();
 		calOpen.set(Calendar.HOUR_OF_DAY,9);
@@ -48,7 +54,7 @@ public class TickerActionAdvisor {
 		calOpen.set(Calendar.MILLISECOND,0);
 
 		long stockOpen = calOpen.getTime().getTime();
-		//System.out.println("Stock Open:" + stockOpen);
+		System.out.println("Stock Open:" + stockOpen);
 		
 		for(int j=0; j<18; j++) {
 			System.out.println("j: " + j);
@@ -81,7 +87,7 @@ public class TickerActionAdvisor {
 				}
 			} else {
 				time = new Date().getTime();
-				//System.out.println("Updated time: " + time);
+				System.out.println("Updated time: " + time);
 				try {
 					Thread.sleep(60000);
 				} catch (InterruptedException e) {
@@ -90,31 +96,31 @@ public class TickerActionAdvisor {
 				} 
 			}
 		}
-		System.out.println(tickerSymbol + " Done for the day. Good luck again tomorrow");
+		System.out.println("Done for the day. Good luck again tomorrow");
 	}
 	
-	//@PostConstruct
-	public void launch(String tickerSymbol) throws IOException {
+	@PostConstruct
+	public void launch() {
 		
 		TickerActionAdvisor json2Java = new TickerActionAdvisor();
-		//try {
-			//ResourceLoader rl = new ClassRelativeResourceLoader(TickerActionAdvisor.class);
-			//Resource resource = rl.getResource("classpath:InterestedTickerSymbols.txt");
-			//File file = resource.getFile();
-			//BufferedReader bufferedReader = new BufferedReader(new FileReader(file.getAbsolutePath()));
-			//String tickerSymbol = bufferedReader.readLine();
+		try {
+			ResourceLoader rl = new ClassRelativeResourceLoader(TickerActionAdvisor.class);
+			Resource resource = rl.getResource("classpath:InterestedTickerSymbols.txt");
+			File file = resource.getFile();
+			BufferedReader bufferedReader = new BufferedReader(new FileReader(file.getAbsolutePath()));
+			String tickerSymbol = bufferedReader.readLine();
 			
-			//while(tickerSymbol != null) {
+			while(tickerSymbol != null) {
 				json2Java.getData(tickerSymbol);
 				if(!data.isEmpty()) {
 					json2Java.setInintialPrice(tickerSymbol);
 					json2Java.check(tickerSymbol);
 				}
-			//	tickerSymbol = bufferedReader.readLine();
-			//}
-		//} catch (IOException e) {
+				tickerSymbol = bufferedReader.readLine();
+			}
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
-		//	e.printStackTrace();
-		//}	
+			e.printStackTrace();
+		}	
 	}
 }
